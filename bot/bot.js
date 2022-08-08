@@ -58,19 +58,26 @@ var USS_CUSTOMER_SESSION = 'http://10.8.90.13:7001/user-service-service/resource
 var LGW_PREFIX = 'http://10.8.90.22:7001/lgw-service/resources';
 var LGW_LAUNCH_GAME = LGW_PREFIX + '/internal/launch_game';
 var LGW_GAME_MENU = LGW_PREFIX + '/games/game_menus';
-// const BOT_TOKEN = '5373210588:AAHXW7qemfd3xCQ8UgjEiB2PyE5jgymrb4A';
+var web_link = "https://7b43-114-36-214-175.ap.ngrok.io";
+// const BOT_TOKEN = '5456058602:AAFQfa0L3BuBzXjNpZpwg6dDF8sj2mGD2-Y'; //test2
 var BOT_TOKEN = "5510481763:AAG9d3EeFzfbcai1Ru7VODpyZNVKkV3BvWE"; //test
 // const BOT_TOKEN = "5538829192:AAGmxQ3cjgg66nG9vXSOJthA4Te02pXo-1I"
 var bot = new telegraf_1.Telegraf(BOT_TOKEN);
+bot.telegram.setMyCommands([
+    {
+        command: '/help',
+        description: 'help command'
+    }
+]);
 var MAIN_MENU = "main_menu";
 var MAIN_MENU_BUTTON = telegraf_1.Markup.button.callback("⇠ Show Main Menu", MAIN_MENU);
 var DOWNLOAD_HISTORY = "download_history";
 var DOWNLOAD_HISTORY_BUTTON = telegraf_1.Markup.button.callback("📈 下載近30期歷史獎號", DOWNLOAD_HISTORY);
-var SSC_COMMAND = "时时彩";
+var SSC_COMMAND = "时时彩遊戲說明";
 var GOTO_SSC_COMMAND_BUTTON = telegraf_1.Markup.button.callback('⇠ Back to SSC Games', SSC_COMMAND);
-var K3_COMMAND = "快三";
+var K3_COMMAND = "快三遊戲說明";
 var GOTO_K3_COMMAND_BUTTON = telegraf_1.Markup.button.callback('⇠ Back to K3 Games', K3_COMMAND);
-var K32_COMMAND = "快三2";
+var K32_COMMAND = "K3遊戲說明";
 var GOTO_K32_COMMAND_BUTTON = telegraf_1.Markup.button.callback('⇠ Back to K3_2 Games', K32_COMMAND);
 var TOP_WINNER_COMMAND = "中獎排行榜";
 // const NEED_LOGIN_COMMAND = ["/help", "/games", /^menu_/]
@@ -119,14 +126,29 @@ function showMainMenu(ctx) {
         reply_to_message_id: ctx.message.message_id,
         reply_markup: {
             keyboard: [
-                [SSC_COMMAND, K3_COMMAND, K32_COMMAND],
-                [TOP_WINNER_COMMAND, "近期訂單查詢", "/games"]
+                [SSC_COMMAND, K3_COMMAND],
+                [K32_COMMAND, TOP_WINNER_COMMAND],
+                ["BET"]
             ],
             resize_keyboard: true,
             one_time_keyboard: true
         }
     });
 }
+bot.hears("BET", function (ctx) {
+    try {
+        ctx.reply("betting ", {
+            reply_markup: {
+                keyboard: [[{ text: "web app", web_app: { url: web_link } }]],
+                resize_keyboard: true,
+                one_time_keyboard: true
+            }
+        });
+    }
+    catch (ex) {
+        console.log(ex);
+    }
+});
 bot.hears(SSC_COMMAND, function (ctx) {
     try {
         replySscGameList(ctx);
@@ -611,7 +633,6 @@ function getGameMenu(ctx) {
         });
     });
 }
-var web_link = "https://9aa6-114-36-201-58.ap.ngrok.io";
 bot.command("/test", function (ctx) { return __awaiter(void 0, void 0, void 0, function () {
     var result1, result2, chatId, url1, url2, url2_;
     var _a;
@@ -793,16 +814,15 @@ function loginLGW(ctx) {
                             "password": password
                         }).then(function (resp) {
                             if (resp === undefined) {
-                                ctx.reply('get uss customer session failed. uss response undefined');
+                                console.log('get uss customer session failed. uss response undefined');
+                                ctx.reply("Please check your username and password");
                             }
                             return resp.data;
                         })["catch"](function (ex) {
                             console.log(ex);
-                            ctx.reply('uss login failed.');
                         })];
                 case 1:
                     ussResponse_1 = _a.sent();
-                    console.log(ussResponse_1);
                     return [2 /*return*/, axios_1["default"].post(LGW_LAUNCH_GAME, {
                             "customerName": username,
                             "nickname": "OOXX",

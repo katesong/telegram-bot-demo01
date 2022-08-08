@@ -12,24 +12,34 @@ const USS_CUSTOMER_SESSION = 'http://10.8.90.13:7001/user-service-service/resour
 const LGW_PREFIX = 'http://10.8.90.22:7001/lgw-service/resources'
 const LGW_LAUNCH_GAME = LGW_PREFIX + '/internal/launch_game'
 const LGW_GAME_MENU = LGW_PREFIX + '/games/game_menus'
+const web_link = "https://7b43-114-36-214-175.ap.ngrok.io"
 
-// const BOT_TOKEN = '5373210588:AAHXW7qemfd3xCQ8UgjEiB2PyE5jgymrb4A';
+// const BOT_TOKEN = '5456058602:AAFQfa0L3BuBzXjNpZpwg6dDF8sj2mGD2-Y'; //test2
 const BOT_TOKEN = "5510481763:AAG9d3EeFzfbcai1Ru7VODpyZNVKkV3BvWE" //test
 // const BOT_TOKEN = "5538829192:AAGmxQ3cjgg66nG9vXSOJthA4Te02pXo-1I"
 const bot = new Telegraf(BOT_TOKEN)
+
+bot.telegram.setMyCommands([
+    {
+        command: '/help',
+        description: 'help command'
+    }
+
+])
 
 
 const MAIN_MENU = "main_menu"
 const MAIN_MENU_BUTTON = Markup.button.callback("⇠ Show Main Menu", MAIN_MENU)
 const DOWNLOAD_HISTORY = "download_history"
 const DOWNLOAD_HISTORY_BUTTON = Markup.button.callback("📈 下載近30期歷史獎號", DOWNLOAD_HISTORY)
-const SSC_COMMAND = "时时彩"
+const SSC_COMMAND = "时时彩遊戲說明"
 const GOTO_SSC_COMMAND_BUTTON = Markup.button.callback('⇠ Back to SSC Games', SSC_COMMAND)
-const K3_COMMAND = "快三"
+const K3_COMMAND = "快三遊戲說明"
 const GOTO_K3_COMMAND_BUTTON = Markup.button.callback('⇠ Back to K3 Games', K3_COMMAND)
-const K32_COMMAND = "快三2"
+const K32_COMMAND = "K3遊戲說明"
 const GOTO_K32_COMMAND_BUTTON = Markup.button.callback('⇠ Back to K3_2 Games', K32_COMMAND)
 const TOP_WINNER_COMMAND = "中獎排行榜"
+const BET_COMMAND = "投注"
 
 // const NEED_LOGIN_COMMAND = ["/help", "/games", /^menu_/]
 const NEED_LOGIN_COMMAND = [""]
@@ -91,19 +101,36 @@ bot.action(MAIN_MENU, ctx => {
     }
 })
 
+
 function showMainMenu(ctx) {
     bot.telegram.sendMessage(ctx.chat.id, "Bot Commands", {
         reply_to_message_id: ctx.message.message_id,
         reply_markup: {
             keyboard: [
-                [SSC_COMMAND, K3_COMMAND, K32_COMMAND],
-                [TOP_WINNER_COMMAND, "近期訂單查詢", "/games"]
+                [SSC_COMMAND, K3_COMMAND],
+                [K32_COMMAND, TOP_WINNER_COMMAND],
+                [BET_COMMAND]
             ],
             resize_keyboard: true,
             one_time_keyboard: true
         }
     })
 }
+
+bot.hears(BET_COMMAND, ctx => {
+    try {
+        ctx.reply("betting ", {
+            reply_markup: {
+                keyboard: [[{ text: "web app", web_app: { url: web_link } }]],
+                resize_keyboard: true,
+                one_time_keyboard: true
+            },
+        })
+
+    } catch (ex) {
+        console.log(ex)
+    }
+})
 
 bot.hears(SSC_COMMAND, ctx => {
     try {
@@ -484,7 +511,7 @@ bot.action(/^k32play_/, async ctx => {
             let page = Number(textArray[2])
             let prePage = page - 1
             let nextPage = page + 1
-            
+
             let rule = getK3PlayRule(page)
 
             let caption = `🎲 快三 / *${remark}* 🎲
@@ -525,7 +552,7 @@ bot.action(/^k32play_/, async ctx => {
 
 bot.hears(TOP_WINNER_COMMAND, ctx => {
     try {
-        
+
         let currentPage = 1
         let data = getTop20WinnerByIndex(0)
         let caption = `
@@ -546,7 +573,7 @@ winAmount : ${data.winAmount}
 bot.action(/^中獎排行榜_/, ctx => {
     try {
         if (ctx.match) {
-            
+
             let currentPage = ctx.match.input.split("_")[1]
 
             let index = Number(currentPage) - 1
@@ -561,7 +588,7 @@ winAmount : $ ${data.winAmount}
             ctx.deleteMessage()
 
             replyTopWinner(ctx, caption, currentPage)
-        
+
         }
     } catch (ex) {
         console.log(ex)
@@ -713,7 +740,7 @@ async function getGameMenu(ctx) {
         console.log(ex)
     })
 }
-const web_link = "https://9aa6-114-36-201-58.ap.ngrok.io"
+
 bot.command("/test", async ctx => {
 
     let result1 = await ctx.replyWithPhoto({ source: "./images/TCGFFC.png" },
@@ -906,16 +933,14 @@ async function loginLGW(ctx) {
             "password": password
         }).then(resp => {
             if (resp === undefined) {
-                ctx.reply('get uss customer session failed. uss response undefined')
+                console.log('get uss customer session failed. uss response undefined')
+                ctx.reply("Please check your username and password")
             }
             return resp.data
 
         }).catch(ex => {
             console.log(ex)
-            ctx.reply('uss login failed.')
         })
-
-        console.log(ussResponse)
 
         return axios.post(LGW_LAUNCH_GAME, {
             "customerName": username,

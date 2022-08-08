@@ -24,7 +24,8 @@ function Card({ food, onAdd, onRemove }) {
             <div className="image_container">
                 <img src={Image} alt={title} />
             </div>
-            <h4 className='card_title'>{title} . $<span className='card_price'>{price}</span></h4>
+            <h1 className='card_title'>{title}</h1>
+            <h4 className='card_title'><span className='card_price'>{price}</span></h4>
             <div className="btn_container">
                 <Button title={'+'} type={'add'} onClick={handleIncrement} />
                 {count !== 0 ? (<Button title={'-'} type={'remove'} onClick={handleDecrement} />) : ("")}

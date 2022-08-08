@@ -1,0 +1,29 @@
+.lottery-nums {
+    overflow: hidden;
+    width: 450px;
+    margin: 0 auto;
+}
+
+.btn {
+    width: 35px;
+    height: 35px;
+    padding: 3px;
+    border-radius: 50%;
+    border: 1px solid #999;
+    background-color: #fff;
+    color: #555;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    background-color: salmon;
+            color: #fff;
+}
+
+.btn:active {
+    background-color: salmon;
+    color: #fff;
+}
