@@ -2,8 +2,8 @@ const { Markup, session, Telegraf } = require('telegraf')
 const { getSscPlayRule, getLoginWarning, getGamesMessage, getSscGamesMessage, getGameButtonIntro, getGameMenus, getK3Message, getK3PlayRule, getTop20WinnerByIndex } = require('./db/db.js')
 
 
-const BOT_TOKEN = "5538829192:AAGmxQ3cjgg66nG9vXSOJthA4Te02pXo-1I" // Tcg demo bot
-const bot = new Telegraf(BOT_TOKEN)
+// const BOT_TOKEN = "5538829192:AAGmxQ3cjgg66nG9vXSOJthA4Te02pXo-1I" // Tcg demo bot
+const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.telegram.setMyCommands([
     {
@@ -88,7 +88,7 @@ bot.hears(BET_COMMAND, ctx => {
     try {
         ctx.reply("betting ", {
             reply_markup: {
-                keyboard: [[{ text: "web app", web_app: { url: web_link } }]],
+                keyboard: [[{ text: "web app", web_app: { url: process.env.WEB_LINK } }]],
                 resize_keyboard: true,
                 one_time_keyboard: true
             },
