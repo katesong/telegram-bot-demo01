@@ -166,7 +166,7 @@ function getSscGameMenus() {
             "gameId": 358,
             "code": "TCGFFC",
             "gameGroupId": 1,
-            "remark": "天成分分彩",
+            "remark": "分分測試彩",
             "sorting": 1,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCGFFC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCGFFC.png",
@@ -205,7 +205,7 @@ function getSscGameMenus() {
             "gameId": 1866,
             "code": "HNFFC",
             "gameGroupId": 1,
-            "remark": "河内分分彩",
+            "remark": "時時測試彩",
             "sorting": 2,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/HNFFC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/HNFFC.png",
@@ -244,7 +244,7 @@ function getSscGameMenus() {
             "gameId": 1628,
             "code": "TX10FC",
             "gameGroupId": 1,
-            "remark": "腾讯10分彩",
+            "remark": "10分測試彩",
             "sorting": 3,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TX10FC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TX10FC.png",
@@ -281,7 +281,7 @@ function getSscGameMenus() {
             "gameId": 1166,
             "code": "QQFFC",
             "gameGroupId": 1,
-            "remark": "QQ分分彩",
+            "remark": "QQ分分測試彩",
             "sorting": 6,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/QQFFC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/QQFFC.png",
@@ -320,7 +320,7 @@ function getSscGameMenus() {
             "gameId": 18,
             "code": "BJSSC",
             "gameGroupId": 1,
-            "remark": "北京5分彩",
+            "remark": "5分測試彩",
             "sorting": 9,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/BJSSC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/BJSSC.png",
@@ -354,49 +354,10 @@ function getSscGameMenus() {
             "remainTime": 247764
         },
         {
-            "gameId": 360,
-            "code": "TCGSSC",
-            "gameGroupId": 1,
-            "remark": "天成5分彩",
-            "sorting": 10,
-            "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCGSSC.png",
-            "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCGSSC.png",
-            "tradPlaySwitch": true,
-            "entPlaySwitch": false,
-            "liveVideoSwitch": false,
-            "tag": [],
-            "categories": [],
-            "standardBonus": 2000,
-            "ui": "t3",
-            "mUi": "b1",
-            "css": "CSS",
-            "gameGroupCode": "SSC",
-            "numero": "10541198",
-            "previousWinningNumber": "43476",
-            "lockTime": 120,
-            "country": null,
-            "region": null,
-            "isSale": true,
-            "isOfficial": false,
-            "winningTime": 1658934900000,
-            "supportPlayModes": {
-                "Entertainment": [
-                    "Lott",
-                    "Elott"
-                ],
-                "Tradition": [
-                    "Lott",
-                    "Elott"
-                ]
-            },
-            "defaultPlayType": 1,
-            "remainTime": 247764
-        },
-        {
             "gameId": 4930,
             "code": "BABTBFFC",
             "gameGroupId": 1,
-            "remark": "币安比特币分分彩",
+            "remark": "秒秒測試彩",
             "sorting": 11,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/BABTBFFC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/BABTBFFC.png",
@@ -435,7 +396,7 @@ function getSscGameMenus() {
             "gameId": 3606,
             "code": "YGSSC",
             "gameGroupId": 1,
-            "remark": "EOS阳光时时彩",
+            "remark": "EOS阳光时时測試彩",
             "sorting": 13,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/YGSSC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/YGSSC.png",
@@ -474,7 +435,7 @@ function getSscGameMenus() {
             "gameId": 24,
             "code": "CASSC",
             "gameGroupId": 1,
-            "remark": "加拿大3.5分彩",
+            "remark": "3.5分測試彩",
             "sorting": 14,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/CASSC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/CASSC.png",
@@ -508,7 +469,7 @@ function getSscGameMenus() {
             "gameId": 1726,
             "code": "HN5FC",
             "gameGroupId": 1,
-            "remark": "河内五分彩V2",
+            "remark": "五分測試彩V2",
             "sorting": 15,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/HN5FC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/HN5FC.png",
@@ -545,7 +506,7 @@ function getSscGameMenus() {
             "gameId": 1,
             "code": "CQSSC",
             "gameGroupId": 1,
-            "remark": "重庆时时彩",
+            "remark": "重庆时时測試彩",
             "sorting": 16,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/CQSSC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/CQSSC.png",
@@ -579,47 +540,10 @@ function getSscGameMenus() {
             "remainTime": 1147764
         },
         {
-            "gameId": 1627,
-            "code": "TX5FC",
-            "gameGroupId": 1,
-            "remark": "腾讯5分彩",
-            "sorting": 17,
-            "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TX5FC.png",
-            "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TX5FC.png",
-            "tradPlaySwitch": true,
-            "entPlaySwitch": false,
-            "liveVideoSwitch": false,
-            "tag": [],
-            "categories": [],
-            "standardBonus": 2000,
-            "ui": "t3",
-            "mUi": "b1",
-            "css": "CSS",
-            "gameGroupCode": "SSC",
-            "numero": "202207270279",
-            "previousWinningNumber": "67019",
-            "lockTime": 10,
-            "country": null,
-            "region": null,
-            "isSale": true,
-            "isOfficial": true,
-            "winningTime": 1658934900000,
-            "supportPlayModes": {
-                "Entertainment": [
-                    "Lott"
-                ],
-                "Tradition": [
-                    "Lott"
-                ]
-            },
-            "defaultPlayType": 1,
-            "remainTime": 247764
-        },
-        {
             "gameId": 3246,
             "code": "MMSSC",
             "gameGroupId": 1,
-            "remark": "秒秒时时彩",
+            "remark": "秒秒时时測試彩",
             "sorting": 21,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/MMSSC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/MMSSC.png",
@@ -660,7 +584,7 @@ function getSscGameMenus() {
             "gameId": 1827,
             "code": "ZDHFFC",
             "gameGroupId": 1,
-            "remark": "自动化分分彩",
+            "remark": "自动化分分測試彩",
             "sorting": 25,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCFFC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCFFC.png",
@@ -698,90 +622,10 @@ function getSscGameMenus() {
             "remainTime": 7764
         },
         {
-            "gameId": 1906,
-            "code": "ALNFFC",
-            "gameGroupId": 1,
-            "remark": "阿里分分彩",
-            "sorting": 26,
-            "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/ALNFFC.png",
-            "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/ALNFFC.png",
-            "tradPlaySwitch": true,
-            "entPlaySwitch": false,
-            "liveVideoSwitch": false,
-            "tag": [],
-            "categories": [],
-            "standardBonus": 2000,
-            "ui": "t3",
-            "mUi": "b1",
-            "css": "CSS",
-            "gameGroupCode": "SSC",
-            "numero": "202207271391",
-            "previousWinningNumber": "35591",
-            "lockTime": 1,
-            "country": null,
-            "region": null,
-            "isSale": true,
-            "isOfficial": true,
-            "winningTime": 1658934660000,
-            "supportPlayModes": {
-                "Entertainment": [
-                    "Lott",
-                    "Elott"
-                ],
-                "Tradition": [
-                    "Lott",
-                    "Elott"
-                ]
-            },
-            "defaultPlayType": 1,
-            "remainTime": 7764
-        },
-        {
-            "gameId": 370,
-            "code": "TXFFC",
-            "gameGroupId": 1,
-            "remark": "腾讯分分彩",
-            "sorting": 33,
-            "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCFFC.png",
-            "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCFFC.png",
-            "tradPlaySwitch": true,
-            "entPlaySwitch": false,
-            "liveVideoSwitch": false,
-            "tag": [],
-            "categories": [
-                "VIDEO"
-            ],
-            "standardBonus": 2000,
-            "ui": "t3",
-            "mUi": "b1",
-            "css": "CSS",
-            "gameGroupCode": "SSC",
-            "numero": "202207280001",
-            "previousWinningNumber": "03385",
-            "lockTime": 5,
-            "country": null,
-            "region": null,
-            "isSale": true,
-            "isOfficial": true,
-            "winningTime": 1658937660000,
-            "supportPlayModes": {
-                "Entertainment": [
-                    "Lott",
-                    "Elott"
-                ],
-                "Tradition": [
-                    "Lott",
-                    "Elott"
-                ]
-            },
-            "defaultPlayType": 1,
-            "remainTime": 3007764
-        },
-        {
             "gameId": 361,
             "code": "TCGWFC",
             "gameGroupId": 1,
-            "remark": "天成1.5分彩",
+            "remark": "1.5分測試彩",
             "sorting": 35,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCGWFC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCGWFC.png",
@@ -816,49 +660,10 @@ function getSscGameMenus() {
             "remainTime": 67764
         },
         {
-            "gameId": 3746,
-            "code": "CLSSC",
-            "gameGroupId": 1,
-            "remark": "CLSSC",
-            "sorting": 36,
-            "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/CLSSC.png",
-            "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/CLSSC.png",
-            "tradPlaySwitch": true,
-            "entPlaySwitch": false,
-            "liveVideoSwitch": false,
-            "tag": [],
-            "categories": [
-                "VIDEO"
-            ],
-            "standardBonus": 2000,
-            "ui": "t3",
-            "mUi": "b1",
-            "css": "CSS",
-            "gameGroupCode": "SSC",
-            "numero": null,
-            "previousWinningNumber": null,
-            "lockTime": 120,
-            "country": null,
-            "region": null,
-            "isSale": false,
-            "isOfficial": false,
-            "winningTime": null,
-            "supportPlayModes": {
-                "Entertainment": [
-                    "Lott"
-                ],
-                "Tradition": [
-                    "Lott"
-                ]
-            },
-            "defaultPlayType": 1,
-            "remainTime": 0
-        },
-        {
             "gameId": 1386,
             "code": "TCT5FC",
             "gameGroupId": 1,
-            "remark": "天蝎五分彩",
+            "remark": "天蝎五分測試彩",
             "sorting": 37,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCT5FC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCT5FC.png",
@@ -897,7 +702,7 @@ function getSscGameMenus() {
             "gameId": 2626,
             "code": "XYFFC",
             "gameGroupId": 1,
-            "remark": "幸运分分彩",
+            "remark": "幸运分分測試彩",
             "sorting": 38,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/XYFFC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/XYFFC.png",
@@ -933,51 +738,10 @@ function getSscGameMenus() {
             "remainTime": 7764
         },
         {
-            "gameId": 4612,
-            "code": "LJTJTXFFC",
-            "gameGroupId": 1,
-            "remark": "奇趣分分彩",
-            "sorting": 39,
-            "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCFFC.png",
-            "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCFFC.png",
-            "tradPlaySwitch": true,
-            "entPlaySwitch": false,
-            "liveVideoSwitch": false,
-            "tag": [],
-            "categories": [
-                "VIDEO"
-            ],
-            "standardBonus": 2000,
-            "ui": "t3",
-            "mUi": "b1",
-            "css": "CSS",
-            "gameGroupCode": "SSC",
-            "numero": "20220727-1391",
-            "previousWinningNumber": "73045",
-            "lockTime": 5,
-            "country": "Taiwan",
-            "region": null,
-            "isSale": true,
-            "isOfficial": true,
-            "winningTime": 1658934660000,
-            "supportPlayModes": {
-                "Entertainment": [
-                    "Lott",
-                    "Elott"
-                ],
-                "Tradition": [
-                    "Lott",
-                    "Elott"
-                ]
-            },
-            "defaultPlayType": 1,
-            "remainTime": 7763
-        },
-        {
             "gameId": 4707,
             "code": "TESTFFC",
             "gameGroupId": 1,
-            "remark": "測試分分彩",
+            "remark": "測試3分彩",
             "sorting": 40,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCFFC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCFFC.png",
@@ -1015,93 +779,10 @@ function getSscGameMenus() {
             "remainTime": 7763
         },
         {
-            "gameId": 4746,
-            "code": "USHNFFC",
-            "gameGroupId": 1,
-            "remark": "USHNFFC",
-            "sorting": 41,
-            "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCFFC.png",
-            "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCFFC.png",
-            "tradPlaySwitch": true,
-            "entPlaySwitch": false,
-            "liveVideoSwitch": false,
-            "tag": [
-                "HOT",
-                "NEW"
-            ],
-            "categories": [
-                "VIDEO"
-            ],
-            "standardBonus": 2000,
-            "ui": "t3",
-            "mUi": "b1",
-            "css": "CSS",
-            "gameGroupCode": "SSC",
-            "numero": null,
-            "previousWinningNumber": null,
-            "lockTime": 10,
-            "country": "Taiwan",
-            "region": null,
-            "isSale": false,
-            "isOfficial": false,
-            "winningTime": null,
-            "supportPlayModes": {
-                "Entertainment": [
-                    "Lott",
-                    "Elott"
-                ],
-                "Tradition": [
-                    "Lott",
-                    "Elott"
-                ]
-            },
-            "defaultPlayType": 1,
-            "remainTime": 0
-        },
-        {
-            "gameId": 10,
-            "code": "TJSSC",
-            "gameGroupId": 1,
-            "remark": "天津时时彩XD",
-            "sorting": 42,
-            "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TJSSC.png",
-            "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TJSSC.png",
-            "tradPlaySwitch": true,
-            "entPlaySwitch": false,
-            "liveVideoSwitch": false,
-            "tag": [],
-            "categories": [],
-            "standardBonus": 2000,
-            "ui": "t3",
-            "mUi": "b1",
-            "css": "CSS",
-            "gameGroupCode": "SSC",
-            "numero": "20220728-001",
-            "previousWinningNumber": "21834",
-            "lockTime": 5,
-            "country": null,
-            "region": null,
-            "isSale": true,
-            "isOfficial": true,
-            "winningTime": 1658971200000,
-            "supportPlayModes": {
-                "Entertainment": [
-                    "Lott",
-                    "Elott"
-                ],
-                "Tradition": [
-                    "Lott",
-                    "Elott"
-                ]
-            },
-            "defaultPlayType": 1,
-            "remainTime": 36547763
-        },
-        {
             "gameId": 4577,
             "code": "TWBSSC",
             "gameGroupId": 1,
-            "remark": "台湾时时彩",
+            "remark": "台湾时时測試彩",
             "sorting": 44,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCFFC.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCFFC.png",
@@ -1137,47 +818,6 @@ function getSscGameMenus() {
             },
             "defaultPlayType": 1,
             "remainTime": 247763
-        },
-        {
-            "gameId": 4929,
-            "code": "BCHSFFC",
-            "gameGroupId": 1,
-            "remark": "波场哈希分分彩",
-            "sorting": 45,
-            "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCFFC.png",
-            "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCFFC.png",
-            "tradPlaySwitch": true,
-            "entPlaySwitch": false,
-            "liveVideoSwitch": false,
-            "tag": [],
-            "categories": [
-                "VIDEO"
-            ],
-            "standardBonus": 2000,
-            "ui": "t3",
-            "mUi": "b1",
-            "css": "CSS",
-            "gameGroupCode": "SSC",
-            "numero": "202207271391",
-            "previousWinningNumber": "19838",
-            "lockTime": 5,
-            "country": "Taiwan",
-            "region": null,
-            "isSale": true,
-            "isOfficial": true,
-            "winningTime": 1658934660000,
-            "supportPlayModes": {
-                "Entertainment": [
-                    "Lott",
-                    "Elott"
-                ],
-                "Tradition": [
-                    "Lott",
-                    "Elott"
-                ]
-            },
-            "defaultPlayType": 1,
-            "remainTime": 7763
         }
     ]
 }
@@ -1187,7 +827,7 @@ function getK3GameMenus() {
             "gameId": 3346,
             "code": "MMK3",
             "gameGroupId": 8,
-            "remark": "秒秒秒K3",
+            "remark": "秒秒秒測試K3",
             "sorting": 1,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/MMK3.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/MMK3.png",
@@ -1227,47 +867,10 @@ function getK3GameMenus() {
             "remainTime": 0
         },
         {
-            "gameId": 2398,
-            "code": "DFK3",
-            "gameGroupId": 8,
-            "remark": "大发快三",
-            "sorting": 2,
-            "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/DFK3.png",
-            "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/DFK3.png",
-            "tradPlaySwitch": true,
-            "entPlaySwitch": false,
-            "liveVideoSwitch": false,
-            "tag": [],
-            "categories": [],
-            "standardBonus": 2000,
-            "ui": "t3",
-            "mUi": "b1",
-            "css": "CSS",
-            "gameGroupCode": "K3",
-            "numero": "202207290925",
-            "previousWinningNumber": "243",
-            "lockTime": 5,
-            "country": null,
-            "region": null,
-            "isSale": false,
-            "isOfficial": true,
-            "winningTime": 1659079440000,
-            "supportPlayModes": {
-                "Entertainment": [
-                    "Lott"
-                ],
-                "Tradition": [
-                    "Lott"
-                ]
-            },
-            "defaultPlayType": 1,
-            "remainTime": 31934
-        },
-        {
             "gameId": 1834,
             "code": "ZDHK3",
             "gameGroupId": 8,
-            "remark": "自动化快3",
+            "remark": "自动化測試快3",
             "sorting": 3,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/ZDHK3.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/ZDHK3.png",
@@ -1304,7 +907,7 @@ function getK3GameMenus() {
             "gameId": 3168,
             "code": "TCBK3",
             "gameGroupId": 8,
-            "remark": "TCBK3",
+            "remark": "K3測試彩",
             "sorting": 4,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCBK3.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCBK3.png",
@@ -1343,7 +946,7 @@ function getK3GameMenus() {
             "gameId": 3806,
             "code": "YGK3",
             "gameGroupId": 8,
-            "remark": "阳光快三",
+            "remark": "S快三",
             "sorting": 5,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/YGK3.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/YGK3.png",
@@ -1382,7 +985,7 @@ function getK3GameMenus() {
             "gameId": 1026,
             "code": "TCGK3",
             "gameGroupId": 8,
-            "remark": "天成快三",
+            "remark": "K3測試彩b",
             "sorting": 6,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/TCGK3.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/TCGK3.png",
@@ -1419,7 +1022,7 @@ function getK3GameMenus() {
             "gameId": 1428,
             "code": "JISUK3",
             "gameGroupId": 8,
-            "remark": "极速快三",
+            "remark": "极速測試快三",
             "sorting": 7,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/JISUK3.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/JISUK3.png",
@@ -1453,7 +1056,7 @@ function getK3GameMenus() {
             "gameId": 1012,
             "code": "SHK3",
             "gameGroupId": 8,
-            "remark": "SHK3",
+            "remark": "K3測試a",
             "sorting": 8,
             "webIconUrl": "https://images.b51613.com:42666/VD/RC2019/SHK3.png",
             "mobileIconUrl": "https://images.b51613.com:42666/VD/CR2021/SHK3.png",

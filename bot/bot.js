@@ -59,7 +59,6 @@ var LGW_PREFIX = 'http://10.8.90.22:7001/lgw-service/resources';
 var LGW_LAUNCH_GAME = LGW_PREFIX + '/internal/launch_game';
 var LGW_GAME_MENU = LGW_PREFIX + '/games/game_menus';
 var web_link = "https://7b43-114-36-214-175.ap.ngrok.io";
-// const BOT_TOKEN = "5510481763:AAG9d3EeFzfbcai1Ru7VODpyZNVKkV3BvWE" //test
 var BOT_TOKEN = "5538829192:AAGmxQ3cjgg66nG9vXSOJthA4Te02pXo-1I"; // for demo
 var bot = new telegraf_1.Telegraf(BOT_TOKEN);
 bot.telegram.setMyCommands([
