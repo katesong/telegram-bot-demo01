@@ -79,7 +79,7 @@ function showMainMenu(ctx) {
                 keyboard: [
                     [SSC_COMMAND, K3_COMMAND],
                     [K32_COMMAND, TOP_WINNER_COMMAND],
-                    [BET_COMMAND]
+                    [{ text: BET_COMMAND, web_app: { url: process.env.WEB_LINK } }]
                 ],
                 resize_keyboard: true,
                 one_time_keyboard: true
@@ -91,20 +91,20 @@ function showMainMenu(ctx) {
     
 }
 
-bot.hears(BET_COMMAND, ctx => {
-    try {
-        ctx.reply("betting ", {
-            reply_markup: {
-                keyboard: [[{ text: "web app", web_app: { url: process.env.WEB_LINK } }]],
-                resize_keyboard: true,
-                one_time_keyboard: true
-            },
-        })
+// bot.hears(BET_COMMAND, ctx => {
+//     try {
+//         ctx.reply("betting ", {
+//             reply_markup: {
+//                 keyboard: [[{ text: "web app", web_app: { url: process.env.WEB_LINK } }]],
+//                 resize_keyboard: true,
+//                 one_time_keyboard: true
+//             },
+//         })
 
-    } catch (ex) {
-        console.log(ex)
-    }
-})
+//     } catch (ex) {
+//         console.log(ex)
+//     }
+// })
 
 bot.hears(SSC_COMMAND, ctx => {
     try {
