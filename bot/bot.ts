@@ -14,9 +14,7 @@ const LGW_LAUNCH_GAME = LGW_PREFIX + '/internal/launch_game'
 const LGW_GAME_MENU = LGW_PREFIX + '/games/game_menus'
 const web_link = "https://7b43-114-36-214-175.ap.ngrok.io"
 
-// const BOT_TOKEN = '5456058602:AAFQfa0L3BuBzXjNpZpwg6dDF8sj2mGD2-Y'; //test2
-const BOT_TOKEN = "5510481763:AAG9d3EeFzfbcai1Ru7VODpyZNVKkV3BvWE" //test
-// const BOT_TOKEN = "5538829192:AAGmxQ3cjgg66nG9vXSOJthA4Te02pXo-1I"
+const BOT_TOKEN = "5538829192:AAGmxQ3cjgg66nG9vXSOJthA4Te02pXo-1I" // for demo
 const bot = new Telegraf(BOT_TOKEN)
 
 bot.telegram.setMyCommands([
@@ -47,13 +45,14 @@ const NEED_LOGIN_COMMAND = [""]
 // bot.use(Telegraf.log())
 bot.on('text', (ctx, next) => {
     console.log(`${ctx.from.id} input text : ${ctx.message.text}`)
+    next()
 
-    if (isNotLogin(ctx) && NEED_LOGIN_COMMAND.includes(ctx.message.text)) {
-        ctx.replyWithMarkdown(getLoginWarning(ctx.from.first_name, ctx.from.last_name), Markup.removeKeyboard())
-    } else {
-        console.log("check login : pass")
-        next()
-    }
+    // if (isNotLogin(ctx) && NEED_LOGIN_COMMAND.includes(ctx.message.text)) {
+    //     ctx.replyWithMarkdown(getLoginWarning(ctx.from.first_name, ctx.from.last_name), Markup.removeKeyboard())
+    // } else {
+    //     console.log("check login : pass")
+    //     next()
+    // }
 })
 bot.on('callback_query', (ctx, next) => {
     console.log("callback query")
@@ -66,23 +65,30 @@ bot.on('callback_query', (ctx, next) => {
 
 bot.start(ctx => {
 
-    if (isNotLogin(ctx)) {
-        ctx.replyWithPhoto({ source: "./images/TCGIMG.png" },
-            {
-                caption: getLoginWarning(ctx.from.first_name, ctx.from.last_name),
-                parse_mode: 'MarkdownV2',
-                ...Markup.forceReply().placeholder("/login <username> <password>")
-            }
-        )
+    ctx.replyWithPhoto({ source: "./images/TCGIMG.png" },
+        {
+            caption: `Hello ${ctx.from.first_name} ${ctx.from.last_name}. \nCheck /help to see all this bot can do`,
+            parse_mode: 'Markdown'
+        }
+    )
 
-    } else {
-        ctx.replyWithPhoto({ source: "./images/TCGIMG.png" },
-            {
-                caption: `Hello ${ctx.from.first_name} ${ctx.from.last_name}\\.\nCheck /help to see all this bot can do`,
-                parse_mode: 'Markdown'
-            }
-        )
-    }
+    // if (isNotLogin(ctx)) {
+    //     ctx.replyWithPhoto({ source: "./images/TCGIMG.png" },
+    //         {
+    //             caption: getLoginWarning(ctx.from.first_name, ctx.from.last_name),
+    //             parse_mode: 'MarkdownV2',
+    //             ...Markup.forceReply().placeholder("/login <username> <password>")
+    //         }
+    //     )
+
+    // } else {
+    //     ctx.replyWithPhoto({ source: "./images/TCGIMG.png" },
+    //         {
+    //             caption: `Hello ${ctx.from.first_name} ${ctx.from.last_name}\\.\nCheck /help to see all this bot can do`,
+    //             parse_mode: 'Markdown'
+    //         }
+    //     )
+    // }
 
 })
 
@@ -919,11 +925,11 @@ async function loginLGW(ctx) {
 
     let myId = 480880445
     if ((inputArray.length < 3) && ctx.from.id === myId) {
-        inputArray = ["", "tcgdemov3@wannadie", "123qwe"]
+        inputArray = ["", "wannadie", "123qwe"]
     }
 
     if (inputArray.length === 3) {
-        let username = inputArray[1]
+        let username = "tcgdemov3@" + inputArray[1]
         let password = inputArray[2]
 
         let ussResponse = await axios.post(USS_CUSTOMER_SESSION, {

@@ -59,9 +59,8 @@ var LGW_PREFIX = 'http://10.8.90.22:7001/lgw-service/resources';
 var LGW_LAUNCH_GAME = LGW_PREFIX + '/internal/launch_game';
 var LGW_GAME_MENU = LGW_PREFIX + '/games/game_menus';
 var web_link = "https://7b43-114-36-214-175.ap.ngrok.io";
-// const BOT_TOKEN = '5456058602:AAFQfa0L3BuBzXjNpZpwg6dDF8sj2mGD2-Y'; //test2
-var BOT_TOKEN = "5510481763:AAG9d3EeFzfbcai1Ru7VODpyZNVKkV3BvWE"; //test
-// const BOT_TOKEN = "5538829192:AAGmxQ3cjgg66nG9vXSOJthA4Te02pXo-1I"
+// const BOT_TOKEN = "5510481763:AAG9d3EeFzfbcai1Ru7VODpyZNVKkV3BvWE" //test
+var BOT_TOKEN = "5538829192:AAGmxQ3cjgg66nG9vXSOJthA4Te02pXo-1I"; // for demo
 var bot = new telegraf_1.Telegraf(BOT_TOKEN);
 bot.telegram.setMyCommands([
     {
@@ -80,18 +79,19 @@ var GOTO_K3_COMMAND_BUTTON = telegraf_1.Markup.button.callback('⇠ Back to K3 G
 var K32_COMMAND = "K3遊戲說明";
 var GOTO_K32_COMMAND_BUTTON = telegraf_1.Markup.button.callback('⇠ Back to K3_2 Games', K32_COMMAND);
 var TOP_WINNER_COMMAND = "中獎排行榜";
+var BET_COMMAND = "投注";
 // const NEED_LOGIN_COMMAND = ["/help", "/games", /^menu_/]
 var NEED_LOGIN_COMMAND = [""];
 // bot.use(Telegraf.log())
 bot.on('text', function (ctx, next) {
     console.log("".concat(ctx.from.id, " input text : ").concat(ctx.message.text));
-    if (isNotLogin(ctx) && NEED_LOGIN_COMMAND.includes(ctx.message.text)) {
-        ctx.replyWithMarkdown((0, db_js_1.getLoginWarning)(ctx.from.first_name, ctx.from.last_name), telegraf_1.Markup.removeKeyboard());
-    }
-    else {
-        console.log("check login : pass");
-        next();
-    }
+    next();
+    // if (isNotLogin(ctx) && NEED_LOGIN_COMMAND.includes(ctx.message.text)) {
+    //     ctx.replyWithMarkdown(getLoginWarning(ctx.from.first_name, ctx.from.last_name), Markup.removeKeyboard())
+    // } else {
+    //     console.log("check login : pass")
+    //     next()
+    // }
 });
 bot.on('callback_query', function (ctx, next) {
     console.log("callback query");
@@ -99,15 +99,26 @@ bot.on('callback_query', function (ctx, next) {
     next();
 });
 bot.start(function (ctx) {
-    if (isNotLogin(ctx)) {
-        ctx.replyWithPhoto({ source: "./images/TCGIMG.png" }, __assign({ caption: (0, db_js_1.getLoginWarning)(ctx.from.first_name, ctx.from.last_name), parse_mode: 'MarkdownV2' }, telegraf_1.Markup.forceReply().placeholder("/login <username> <password>")));
-    }
-    else {
-        ctx.replyWithPhoto({ source: "./images/TCGIMG.png" }, {
-            caption: "Hello ".concat(ctx.from.first_name, " ").concat(ctx.from.last_name, "\\.\nCheck /help to see all this bot can do"),
-            parse_mode: 'Markdown'
-        });
-    }
+    ctx.replyWithPhoto({ source: "./images/TCGIMG.png" }, {
+        caption: "Hello ".concat(ctx.from.first_name, " ").concat(ctx.from.last_name, ". \nCheck /help to see all this bot can do"),
+        parse_mode: 'Markdown'
+    });
+    // if (isNotLogin(ctx)) {
+    //     ctx.replyWithPhoto({ source: "./images/TCGIMG.png" },
+    //         {
+    //             caption: getLoginWarning(ctx.from.first_name, ctx.from.last_name),
+    //             parse_mode: 'MarkdownV2',
+    //             ...Markup.forceReply().placeholder("/login <username> <password>")
+    //         }
+    //     )
+    // } else {
+    //     ctx.replyWithPhoto({ source: "./images/TCGIMG.png" },
+    //         {
+    //             caption: `Hello ${ctx.from.first_name} ${ctx.from.last_name}\\.\nCheck /help to see all this bot can do`,
+    //             parse_mode: 'Markdown'
+    //         }
+    //     )
+    // }
 });
 bot.help(function (ctx) {
     showMainMenu(ctx);
@@ -128,14 +139,14 @@ function showMainMenu(ctx) {
             keyboard: [
                 [SSC_COMMAND, K3_COMMAND],
                 [K32_COMMAND, TOP_WINNER_COMMAND],
-                ["BET"]
+                [BET_COMMAND]
             ],
             resize_keyboard: true,
             one_time_keyboard: true
         }
     });
 }
-bot.hears("BET", function (ctx) {
+bot.hears(BET_COMMAND, function (ctx) {
     try {
         ctx.reply("betting ", {
             reply_markup: {
@@ -802,10 +813,10 @@ function loginLGW(ctx) {
                     inputArray = input.split(" ");
                     myId = 480880445;
                     if ((inputArray.length < 3) && ctx.from.id === myId) {
-                        inputArray = ["", "tcgdemov3@wannadie", "123qwe"];
+                        inputArray = ["", "wannadie", "123qwe"];
                     }
                     if (!(inputArray.length === 3)) return [3 /*break*/, 2];
-                    username = inputArray[1];
+                    username = "tcgdemov3@" + inputArray[1];
                     password = inputArray[2];
                     return [4 /*yield*/, axios_1["default"].post(USS_CUSTOMER_SESSION, {
                             "clientIp": "127.0.0.1",

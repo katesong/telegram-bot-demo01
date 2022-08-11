@@ -4,30 +4,38 @@
 
 .card {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: space-between;
-    width: 150px;
-    height: 250px;
+    align-items: center;
+    width: 80%;
+    /* height: 50px; */
     border: 2px solid var(--primary-color);
     padding: 0.5rem 0.3rem;
     margin: 13px 10px;
     position: relative;
     border-radius: 5px;
 }
+.title_container{
+    width: 100%;
+}
 
 .card_title {
     font-weight: 400;
     text-align: center;
+    margin: 5px 0px;
+    color:  var(--primary-color);;
 }
 
 .card_title .card_price {
     font-weight: bold;
+    font-size: 15px;
+    color: #fff;
 }
 
 .image_container {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
+    width: 200px;
+    height: 100%;
+    /* margin: 0 auto; */
 }
 
 .image_container img {
@@ -78,3 +86,4 @@
 .card_badge--hidden {
     display: none;
 }
+
