@@ -43,14 +43,16 @@ bot.on('callback_query', (ctx, next) => {
 
 
 bot.start(ctx => {
-
-    ctx.replyWithPhoto({ source: "./images/TCGIMG.png" },
+    try {
+        ctx.replyWithPhoto({ source: "./images/TCGIMG.png" },
         {
             caption: `Hello ${ctx.from.first_name} ${ctx.from.last_name}. \nCheck /help to see all this bot can do`,
             parse_mode: 'Markdown'
         }
     )
-
+    } catch(ex) {
+        console.log(ex)
+    }
 })
 
 bot.help(ctx => {
@@ -70,18 +72,23 @@ bot.action(MAIN_MENU, ctx => {
 
 
 function showMainMenu(ctx) {
-    bot.telegram.sendMessage(ctx.chat.id, "Bot Commands", {
-        reply_to_message_id: ctx.message.message_id,
-        reply_markup: {
-            keyboard: [
-                [SSC_COMMAND, K3_COMMAND],
-                [K32_COMMAND, TOP_WINNER_COMMAND],
-                [BET_COMMAND]
-            ],
-            resize_keyboard: true,
-            one_time_keyboard: true
-        }
-    })
+    try {
+        bot.telegram.sendMessage(ctx.chat.id, "Bot Commands", {
+            reply_to_message_id: ctx.message.message_id,
+            reply_markup: {
+                keyboard: [
+                    [SSC_COMMAND, K3_COMMAND],
+                    [K32_COMMAND, TOP_WINNER_COMMAND],
+                    [BET_COMMAND]
+                ],
+                resize_keyboard: true,
+                one_time_keyboard: true
+            }
+        })
+    } catch(ex) {
+        console.log(ex)
+    }
+    
 }
 
 bot.hears(BET_COMMAND, ctx => {
