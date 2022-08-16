@@ -2,7 +2,6 @@ const { Markup, session, Telegraf } = require('telegraf')
 const { getSscPlayRule, getLoginWarning, getGamesMessage, getSscGamesMessage, getGameButtonIntro, getGameMenus, getK3Message, getK3PlayRule, getTop20WinnerByIndex } = require('./db/db.js')
 require('dotenv').config()
 
-// const BOT_TOKEN = "5538829192:AAGmxQ3cjgg66nG9vXSOJthA4Te02pXo-1I" // Tcg demo bot
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.telegram.setMyCommands([
@@ -45,12 +44,12 @@ bot.on('callback_query', (ctx, next) => {
 bot.start(ctx => {
     try {
         ctx.replyWithPhoto({ source: "./images/TCGIMG.png" },
-        {
-            caption: `Hello ${ctx.from.first_name} ${ctx.from.last_name}. \nCheck /help to see all this bot can do`,
-            parse_mode: 'Markdown'
-        }
-    )
-    } catch(ex) {
+            {
+                caption: `Hello ${ctx.from.first_name} ${ctx.from.last_name}. \nCheck /help to see all this bot can do`,
+                parse_mode: 'Markdown'
+            }
+        )
+    } catch (ex) {
         console.log(ex)
     }
 })
@@ -85,10 +84,10 @@ function showMainMenu(ctx) {
                 one_time_keyboard: true
             }
         })
-    } catch(ex) {
+    } catch (ex) {
         console.log(ex)
     }
-    
+
 }
 
 // bot.hears(BET_COMMAND, ctx => {
@@ -605,3 +604,9 @@ bot.launch()
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'))
 process.once('SIGTERM', () => bot.stop('SIGTERM'))
+
+process.on('uncaughtException', function (err) {
+    console.log("Node got uncaughtException...");
+    console.error(err);
+
+});
